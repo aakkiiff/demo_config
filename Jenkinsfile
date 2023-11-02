@@ -19,7 +19,7 @@ pipeline {
 
         stage("CHECKOUT GIT REPO"){
             steps{
-                git "${GIT_REPO}"
+                git branch: 'main', url: 'https://github.com/aakkiiff/demo_config.git'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
                 sh "git commit -m 'Updated deployment files to ${IMAGE_TAG}'"
 
                 withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'uname')]) {
-                    sh 'git push https://$uname:$pass@github.com/aakkiiff/demo_config.git master'
+                    sh 'git push https://$uname:$pass@github.com/aakkiiff/demo_config.git main'
                 }
             }
         }
