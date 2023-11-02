@@ -19,7 +19,7 @@ pipeline {
 
         stage("CHECKOUT GIT REPO"){
             steps{
-                git branch: 'main', url: 'https://github.com/aakkiiff/demo_config.git'
+                git "${GIT_REPO}"
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
 
                 sh 'git config --global user.email jackakif@gmail.com'
                 sh 'git config --global user.name aakkiiff'
-                sh 'git add ./k8s/'
+                sh 'git add ./k8s/deployment.yaml'
                 sh "git commit -m 'Updated deployment files to ${IMAGE_TAG}'"
 
                 withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'uname')]) {

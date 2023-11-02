@@ -6,14 +6,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: dipti-client
+      app: client
   template:
     metadata:
       labels:
-        app: dipti-client
+        app: client
     spec:
       containers:
         - name: client
-          image: aakkiiff/dipti_frontend:latest
+          image: aakkiiff/demo_frontend:latest
           ports:
             - containerPort: 3000
