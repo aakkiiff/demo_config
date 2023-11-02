@@ -19,7 +19,7 @@ pipeline {
 
         stage("CHECKOUT GIT REPO"){
             steps{
-                git "${GIT_REPO}"
+                git branch: 'main', url: "${GIT_REPO}"
             }
         }
 
