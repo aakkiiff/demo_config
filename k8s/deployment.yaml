@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: aakkiiff/demo_frontend:8
+          image: aakkiiff/demo_frontend:9
           ports:
             - containerPort: 3000
