@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    parameters {
+        string(name: 'IMAGE_TAG', defaultValue: 'latest', description: 'Enter the image tag')
+    }
+    
     environment {
 
         GIT_REPO = "https://github.com/aakkiiff/demo_config.git" 
