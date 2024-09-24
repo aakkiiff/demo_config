@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'IMAGE_TAG', defaultValue: 'latest', description: 'Enter the image tag')
+        string(name: 'IMAGE_TAG', description: 'Enter the image tag')
     }
     
     environment {
